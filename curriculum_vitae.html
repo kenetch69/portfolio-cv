@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Gerardo Cruz Ruiz - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .header h2 {
+            font-size: 1.3em;
+            color: #ecf0f1;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95em;
+        }
+        
+        .contact-item a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section h3 {
+            color: #34495e;
+            font-size: 1.3em;
+            margin: 20px 0 10px 0;
+        }
+        
+        .section h4 {
+            color: #2980b9;
+            font-size: 1.1em;
+            margin: 15px 0 8px 0;
+        }
+        
+        .profile-text {
+            font-size: 1.1em;
+            text-align: justify;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .skill-category h4 {
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .experience-item {
+            background: #f8f9fa;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .job-title {
+            color: #27ae60;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        .company {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .date {
+            color: #95a5a6;
+            font-size: 0.9em;
+        }
+        
+        .project {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .project h5 {
+            color: #2980b9;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .project-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        
+        .tech-stack {
+            background: #34495e;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            white-space: pre-line;
+        }
+        
+        .achievements {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .achievements li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .achievements li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+        
+        .education-item {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 4px solid #9b59b6;
+        }
+        
+        .cert-list {
+            list-style: none;
+        }
+        
+        .cert-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .cert-list li:before {
+            content: "🎓";
+            position: absolute;
+            left: 0;
+        }
+        
+        .cert-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .objectives {
+            background: #e8f5e8;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .objectives ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .objectives li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .objectives li:before {
+            content: "🎯";
+            position: absolute;
+            left: 0;
+        }
+        
+        .soft-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .soft-skill {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #ffeaa7;
+        }
+        
+        .quote {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1em;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Juan Gerardo Cruz Ruiz</h1>
+            <h2>Desarrollador Backend Spring Boot | Java Developer</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    📧 <strong>Email:</strong> <a href="mailto:juan.cruz@ejemplo.com">juan.cruz@ejemplo.com</a>
+                </div>
+                <div class="contact-item">
+                    📱 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/juan-cruz-ruiz" target="_blank">www.linkedin.com/in/jgerardo</a>
+                </div>
+                <div class="contact-item">
+                    🌐 <strong>GitHub:</strong> <a href="https://github.com/juan-cruz-ruiz" target="_blank">https://github.com/kenetch69</a>
+                </div>
+                <div class="contact-item">
+                    📍 <strong>Ubicación:</strong> Ciudad de México, México
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="section">
+                <h2>🎯 Perfil Profesional</h2>
+                <div class="profile-text">
+                    Desarrollador Backend especializado en <strong>Spring Boot</strong> con experiencia en arquitecturas limpias, seguridad API y microservicios. Apasionado por implementar soluciones robustas siguiendo las mejores prácticas de <strong>OWASP</strong> y <strong>Clean Architecture</strong>. Experiencia comprobada en dockerización, autenticación JWT y sistemas de alta disponibilidad.
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>🛠️ Habilidades Técnicas</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Backend & Frameworks</h4>
+                        <ul class="skill-list">
+                            <li><strong>Java 21</strong> | <strong>Spring Boot 3.4.0</strong> | <strong>Spring Security</strong> | <strong>Spring Data JPA</strong></li>
+                            <li><strong>Microservicios</strong> | <strong>API REST</strong> | <strong>Clean Architecture</strong></li>
+                            <li><strong>JWT Authentication (RSA256)</strong> | <strong>OAuth2 Resource Server</strong></li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Seguridad & Mejores Prácticas</h4>
+                        <ul class="skill-list">
+                            <li><strong>OWASP API Security Top 10</strong> (BOLA, BOPLA, BFLA, Rate Limiting)</li>
+                            <li><strong>Input Sanitization</strong> | <strong>SQL Injection Prevention</strong></li>
+                            <li><strong>Rate Limiting con Bucket4j</strong> | <strong>Circuit Breaker Pattern</strong></li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Bases de Datos</h4>
+                        <ul class="skill-list">
+                            <li><strong>PostgreSQL</strong> | <strong>Hibernate/JPA</strong> | <strong>Repository Pattern</strong></li>
+                            <li><strong>Database Schema Design</strong> | <strong>Query Optimization</strong></li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>DevOps & Herramientas</h4>
+                        <ul class="skill-list">
+                            <li><strong>Docker</strong> | <strong>Docker Compose</strong> | <strong>Containerización</strong></li>
+                            <li><strong>Maven</strong> | <strong>Git</strong> | <strong>GitHub Actions</strong></li>
+                            <li><strong>Resilience4j</strong> | <strong>Actuator</strong> | <strong>Health Checks</strong></li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Arquitectura & Patrones</h4>
+                        <ul class="skill-list">
+                            <li><strong>Clean Architecture</strong> (api/application/domain/infrastructure)</li>
+                            <li><strong>Dependency Injection</strong> | <strong>Interface-based Design</strong></li>
+                            <li><strong>DTO Pattern</strong> | <strong>Builder Pattern</strong> | <strong>Repository Pattern</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>💼 Experiencia Profesional</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Desarrollador Backend Spring Boot</div>
+                            <div class="company">Magictronicplanet.com</div>
+                        </div>
+                        <div class="date">Octubre 2025 - Presente</div>
+                    </div>
+
+                    <h3>🚀 Proyectos Destacados</h3>
+
+                    <div class="project">
+                        <h5>🧪 API Integración de pagos con tarjetas de crédito</h5>
+                        <p><a href="https://magictronicplanet.com/" target="_blank" class="project-link">Página web</a></p>
+                        <p><strong>Descripción:</strong> API REST que permite la integración con un PSP.</p>
+                        
+                        <ul class="achievements">
+                            <li>Desarrollé una <strong>API REST completa</strong> Integración de pagos con tarjetas de crédito usando <strong>Spring Boot 3.4.0</strong></li>
+                            <li>Implementé <strong>autenticación JWT con RSA256</strong> y manejo seguro de tokens</li>
+                            <li>Aplicé <strong>OWASP API Security Top 10</strong> mitigando vulnerabilidades críticas</li>
+                            <li>Dockericé la aplicación con <strong>conexión externa a PostgreSQL</strong></li>
+                            <li>Implementé <strong>Circuit Breaker</strong> con Resilience4j para alta disponibilidad</li>
+                        </ul>
+
+                        <div class="tech-stack">Backend: Java 21, Spring Boot 3.4.0, Spring Security
+Database: PostgreSQL, Hibernate/JPA
+Security: JWT RSA256, OWASP Top 10, Bucket4j Rate Limiting
+DevOps: Docker, Docker Compose, Maven
+Architecture: Clean Architecture, Repository Pattern, DTOs
+AWS ECS Fargate, AWS CloudFront</div>
+                    </div>
+
+                    <div class="project">
+                        <h5>🧪 API Gestión de Taxis</h5>
+                        <p><strong>Descripción:</strong> API REST que permite la generación de métricas y gestión de taxis.</p>
+                        
+                        <ul class="achievements">
+                            <li>Desarrollé una <strong>API REST en desarrollo</strong> Para la Gestión de Taxis <strong>Spring Boot 3.4.0</strong></li>
+                            <li>Implementé <strong>autenticación JWT con RSA256</strong> y manejo seguro de tokens</li>
+                            <li>Aplicé <strong>OWASP API Security Top 10</strong> mitigando vulnerabilidades críticas</li>
+                            <li>Dockericé la aplicación con <strong>conexión externa a PostgreSQL</strong></li>
+                            <li>Implementé <strong>Circuit Breaker</strong> con Resilience4j para alta disponibilidad</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Desarrollador Backend Spring Boot, Flutter</div>
+                            <div class="company">cibanco.com</div>
+                        </div>
+                        <div class="date">Febrero 2021 - Octubre 2025</div>
+                    </div>
+
+                    <div class="project">
+                        <h5>🧪 API Funcionalidad de App CIBANCO</h5>
+                        <p><strong>Descripción:</strong> API REST funcionalidad de CIBANCO.</p>
+                    </div>
+
+                    <div class="project">
+                        <h5>🧪 API Funcionalidad de App CICASH</h5>
+                        <p><strong>Descripción:</strong> API REST funcionalidad de CICASH.</p>
+                    </div>
+
+                    <div class="project">
+                        <h5>🧪 API Funcionalidad de App CITRADER</h5>
+                        <p><strong>Descripción:</strong> API REST funcionalidad de CITrader.</p>
+                    </div>
+
+                    <div class="tech-stack">Backend: Java 8, Spring Boot 2.6.0, Spring Security
+Database: PostgreSQL, Hibernate/JPA
+Security: JWT RSA256, OWASP Top 10, Bucket4j Rate Limiting
+DevOps: Docker, Docker Compose, Maven
+Architecture: Clean Architecture, Repository Pattern, DTOs
+GCP</div>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Proyectos Personales</h3>
+                    
+                    <div class="project">
+                        <h5>API Balanceador de Ecuaciones Químicas</h5>
+                        <p><a href="https://github.com/kenetch69/api-balanceo" target="_blank" class="project-link">GitHub API</a></p>
+                        
+                        <ul class="achievements">
+                            <li>Desarrollé una <strong>API REST completa</strong> para balanceo de ecuaciones químicas usando <strong>Spring Boot 3.4.0</strong></li>
+                            <li>Implementé <strong>autenticación JWT con RSA256</strong> y manejo seguro de tokens</li>
+                            <li>Aplicé <strong>OWASP API Security Top 10</strong> mitigando vulnerabilidades críticas</li>
+                            <li>Dockericé la aplicación con <strong>conexión externa a PostgreSQL</strong></li>
+                            <li>Implementé <strong>Circuit Breaker</strong> con Resilience4j para alta disponibilidad</li>
+                        </ul>
+                    </div>
+
+                    <div class="project">
+                        <h5>App Balanceador de Ecuaciones Química, Flutter</h5>
+                        <p><a href="https://github.com/kenetch69/app-balanceo" target="_blank" class="project-link">GitHub App</a></p>
+                        
+                        <h4>🏗️ Arquitectura</h4>
+                        <ul class="achievements">
+                            <li><strong>Arquitectura Limpia</strong> (Clean Architecture) con separación de responsabilidades</li>
+                            <li><strong>Riverpod</strong> para la gestión de estados</li>
+                            <li><strong>Freezed</strong> para clases de datos inmutables</li>
+                            <li><strong>Patrón Repositorio</strong> para la integración de la API</li>
+                            <li><strong>Excepciones tipadas</strong> para un manejo de errores robusto</li>
+                        </ul>
+
+                        <h4>🎨 Sistema de Diseño</h4>
+                        <ul class="achievements">
+                            <li><strong>Temas profesionales</strong> con los colores de la bandera mexicana</li>
+                            <li>Sistema tipográfico <strong>Google Fonts</strong> (Montserrat)</li>
+                            <li><strong>Tarjetas y componentes adaptables</strong> (Responsive cards y componentes)</li>
+                            <li><strong>Estados de carga</strong> y mensajes de error</li>
+                            <li><strong>Visualización de coeficientes</strong> con chips estilizados</li>
+                        </ul>
+
+                        <h4>🌍 Internacionalización</h4>
+                        <ul class="achievements">
+                            <li>Soporte para <strong>Español e Inglés</strong></li>
+                            <li><strong>Archivos ARB</strong> para las traducciones</li>
+                            <li>Clases de localización <strong>autogeneradas</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>🎓 Educación & Certificaciones</h2>
+                
+                <div class="education-item">
+                    <h3>Licenciatura en Sistemas Computacionales</h3>
+                    <p><em>Universidad Autónoma México</em> | <strong>1995 - 2000</strong></p>
+                </div>
+
+                <h3>Certificaciones Relevantes</h3>
+                <ul class="cert-list">
+                    <li><strong>Spring Professional Certification</strong> <em>(En progreso)</em></li>
+                    <li><strong>Docker Certified Associate</strong> <em>(En progreso)</em></li>
+                    <li><strong>AWS Solutions Architect Associate</strong> <em>(En progreso)</em></li>
+                    <li><strong>OWASP API Security</strong> <em>(Autodidacta)</em></li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>🏆 Competencias Clave</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Desarrollo Backend</h4>
+                        <ul class="skill-list">
+                            <li>Diseño e implementación de <strong>APIs RESTful robustas</strong></li>
+                            <li><strong>Microservicios</strong> con Spring Cloud</li>
+                            <li><strong>Autenticación y autorización</strong> avanzada</li>
+                            <li><strong>Manejo de errores</strong> y logging estructurado</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Seguridad</h4>
+                        <ul class="skill-list">
+                            <li><strong>Prevención de vulnerabilidades</strong> OWASP Top 10</li>
+                            <li><strong>Rate limiting</strong> y protección DDoS</li>
+                            <li><strong>Sanitización de entrada</strong> y validación</li>
+                            <li><strong>Gestión segura de tokens</strong> JWT</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>DevOps</h4>
+                        <ul class="skill-list">
+                            <li><strong>Containerización</strong> con Docker</li>
+                            <li><strong>CI/CD</strong> con GitHub Actions</li>
+                            <li><strong>Monitoreo</strong> con Actuator y métricas</li>
+                            <li><strong>Alta disponibilidad</strong> con Circuit Breakers</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>📈 Objetivos Profesionales</h2>
+                <div class="objectives">
+                    <p>Busco oportunidades como <strong>Desarrollador Backend Spring Boot</strong> donde pueda:</p>
+                    <ul>
+                        <li>Contribuir al desarrollo de <strong>microservicios escalables</strong></li>
+                        <li>Implementar <strong>arquitecturas limpias</strong> y <strong>patrones de diseño</strong></li>
+                        <li>Aplicar <strong>mejores prácticas de seguridad</strong> en APIs</li>
+                        <li>Trabajar en <strong>equipos ágiles</strong> con tecnologías modernas</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>🌟 Soft Skills</h2>
+                <div class="soft-skills">
+                    <div class="soft-skill">
+                        <strong>Resolución de problemas</strong> complejos
+                    </div>
+                    <div class="soft-skill">
+                        <strong>Aprendizaje continuo</strong> de nuevas tecnologías
+                    </div>
+                    <div class="soft-skill">
+                        <strong>Trabajo en equipo</strong> y colaboración
+                    </div>
+                    <div class="soft-skill">
+                        <strong>Comunicación técnica</strong> efectiva
+                    </div>
+                    <div class="soft-skill">
+                        <strong>Atención al detalle</strong> en código y arquitectura
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="quote">
+            "Desarrollador apasionado por crear soluciones backend robustas, seguras y escalables usando Spring Boot y las mejores prácticas de la industria."
+        </div>
+    </div>
+</body>
+</html>
